@@ -1,0 +1,14 @@
+<div id="app" align="center">
+  <h1 v-if="hello === 'Hello'" >Hello!</h1>
+  <h1 v-else-if="hello === 'Holla'" >Holla!</h1>
+  <h1 v-else >World!</h1>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      hello: "Holla"
+    }
+  })
+</script>

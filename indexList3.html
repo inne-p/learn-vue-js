@@ -1,0 +1,27 @@
+<div id="example-1">
+<ul>
+ <li v-for="(item, key, index) in items" >
+   <p>{{ item.message }} - Name : {{ item.name }} - {{ key }}</p>
+ </li>
+</ul>
+<ul>
+<h3>With v-if</h3>
+ <li v-for="(item, index) in items">
+ 	<p v-if="item.message === 'Hello'">Yeay {{ item.message }} - Name : {{ item.name }}</p>
+ 	<p v-else>{{ item.message }} - Name : {{ item.name }}</p>   
+ </li>
+</ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+var example1 = new Vue({
+ el: '#example-1',
+ data: {
+   items: [
+     { message: 'Foo', name: 'Anna' },
+     { message: 'Bar', name: 'John' },
+     { message: 'Hello', name: 'Elsa' }
+   ]
+ }
+})
+</script>

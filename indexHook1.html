@@ -1,0 +1,16 @@
+<div id="app" align="center">
+  {{ message }}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+new Vue({
+  el: '#app',
+ 	data: {   
+   	a: 1,
+   	message: 'VueJS Training'
+  },
+  created: function () {
+  	console.log('a is: ' + this.a)
+  }
+})
+</script>
