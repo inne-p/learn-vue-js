@@ -1,0 +1,31 @@
+<div id="app" align="center">
+     <input v-model="message" placeholder="Input Message" v-on:keyup="input">
+	   <p v-text="message"></p>
+
+     <div v-html="richHtml"></div>
+     <p v-show="type">You just type</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: null,
+      richHtml: '<h3>You are Awesome</h3><p>Yeah <strong>Absolutely</strong></p>',
+      type: false
+    },
+    methods: {
+      input() {
+        console.log('You just input something')      
+      }
+    }
+  })
+</script>
+<style type="text/css">
+body {
+  background-image: url("digits_logo.jpeg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 50%;
+}
+</style>

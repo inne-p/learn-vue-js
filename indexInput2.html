@@ -1,0 +1,41 @@
+<div id="app" align="center">
+  	<input v-model="message.title" placeholder="Title">
+    <br>
+    <input v-model="message.content" placeholder="content">
+    <br>
+    <input v-model.number="message.phoneNumber" type="number">
+    <br>
+    <input type="checkbox" v-model="message.work"> Work
+    <br>
+    <input type="radio" v-model="message.gender" value="male"> Male
+    <input type="radio" v-model="message.gender" value="female"> Female
+    <br>
+	  <p>Title is: {{ message.title }}</p>
+    <p>Content is: {{ message.content }}</p>
+    <p>Phone is: {{ message.phoneNumber }}</p>
+    <p>Work is : {{ message.work ? 'Yes' : 'No' }}</p>
+    <p>Gender is: {{ message.gender }}</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: {
+        title: null,
+        content: null,
+        phoneNumber: null,
+        work: true,
+        gender: null
+      }
+    }
+  })
+</script>
+<style type="text/css">
+body {
+  background-image: url("digits_logo.jpeg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 50%;
+}
+</style>

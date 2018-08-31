@@ -1,0 +1,47 @@
+<div id="components-demo" align="center" >
+  <button-counter ref="counter"></button-counter>
+  <button @click="minCount">Count --</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button @click="addCount">You clicked me {{ count }} times.</button>',
+  methods: {
+    addCount() {
+      this.count = this.count + 1
+      this.$emit('clicked')
+    },
+    minusCount() {
+      this.count = this.count - 1
+    },
+    valueCount() {
+      return this.count
+    }
+  }
+})
+
+var vm = new Vue({ 
+  el: '#components-demo',
+  mounted() {
+    console.log(this.$refs.counter.valueCount())
+  },
+  methods: {
+    minCount() {
+      this.$refs.counter.minusCount()
+    },
+  }
+})
+</script>
+<style type="text/css">
+body {
+	background-image: url("digits_logo.jpeg");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 50%;
+}
+</style>

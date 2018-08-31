@@ -1,0 +1,37 @@
+<div id="app" align="center">
+  <input v-model="message1" placeholder="Input Message 1">
+  <br>
+  <input v-model="message2" v-focus placeholder="Input Message 2">
+  <br>
+  <input v-model="message3" placeholder="Input Message 3">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+  Vue.directive('focus', {
+    inserted: function (el) {
+      el.focus()
+    }
+  })
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message1: null,
+      message2: null,
+      message3: null
+    },
+    methods: {
+      input() {
+        console.log('You just input something')      
+      }
+    }
+  })
+</script>
+<style type="text/css">
+body {
+  background-image: url("digits_logo.jpeg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 50%;
+}
+</style>
